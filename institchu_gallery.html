@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>//vuejsexamples.net</title>
+
+  <style>
+    * {
+      font-family: helvetica, sans-serif;
+      margin: 0;
+    }
+    body {
+      background: #f9fafc;
+    }
+    li {
+      font-size: 12px;
+    }
+    .root {
+      text-align: center;
+      position: relative;
+      width: 480px;
+      margin: 0 auto;
+      text-align: left;
+      top: 65px;
+      margin-bottom: 75px;
+    }
+
+    .hovering {
+      border: 1px solid rgb(0, 255, 0);
+    }
+    .color-black {
+      color: #000000;
+    }
+    .color-blue {
+      color: blue;
+    }
+    .color-green {
+      color: rgb(0, 255, 0);
+    }
+    .wrapper {
+      width: 600px;
+      text-align: left;
+      padding: 5px;
+      margin: 0 auto;
+    }
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    .footer {
+      height: 70px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      background: rgb(0, 11, 66);
+      line-height: 80px;
+      padding: 0 5px;
+
+    }
+    img {
+      /*width: 100%;*/
+      height: 70px;
+      width: auto;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .photos {
+      width: 60px;
+      display: inline-block;
+      padding:5px;
+      position: relative;
+      vertical-align: top;
+      height: 60px;
+      margin: 5px;
+      overflow: hidden;
+    }
+
+    .title {
+      font-size: 10px;
+      position: relative;
+      top: 70px;
+      line-height: 14px;
+      text-align: left;
+      display: none;
+    }
+
+    .header {
+      margin: 0;
+      width: 100%;
+      background: #ffffff;
+      color: white;
+      /*line-height: 80px;*/
+      padding: 15px 0;
+      position: fixed;
+      text-align: left;
+      z-index: 1;
+    }
+
+    footer {
+      background: rgb(0, 11, 66);
+      position: fixed;
+      bottom: 0;
+      height: 60px;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 8px;
+      display: inline-block;
+      position: relative;
+      bottom: -12px;
+      left: -47px;
+      /*z-index: -1;*/
+      text-align: center;
+    }
+
+    a:hover {
+      transition: all ease 0.3s;
+      /*fill: rgb(255, 142, 170);*/
+      color: rgb(255, 142, 170);
+    }
+
+    svg {
+      fill: #ffffff;
+      padding: 0 20px;
+    }
+
+    .footer-svg {
+      width: 480px;
+      margin: 0 auto;
+    }
+
+    .fix-account {
+      left: 423px;
+      bottom: 69px;
+    }
+
+    .fix-bag {
+      left: -56px;
+    }
+
+    .fix-design {
+      left: -51px;
+    }
+
+  </style>    
+
+  </head>
+  <body>
+    <div class="header">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="144" height="24" viewBox="0 0 144 24"><path d="M9.79 1.02l-.671.065c-1.63.098-2.208.39-2.208 1.678v18.362c0 1.288.578 1.58 2.208 1.678l.67.03v.666H0v-.666l.67-.03c1.635-.099 2.213-.39 2.213-1.678V2.763c0-1.288-.578-1.58-2.212-1.678L0 1.02V.497h9.79v.524zm15.815 9.99c0-2.09-.91-3.19-2.595-3.279v-.597h5.345v.597c-1.39.183-2.026 1.215-2.026 3.234v12.822h-.793L13.666 9.494V19.61c0 2.108.843 3.165 2.595 3.234v.641h-5.345v-.641c1.39-.183 1.997-1.215 1.997-3.234V9.518c0-1.214-.587-1.787-1.84-1.787h-.157v-.597h5.501l9.188 11.034V11.01zm45.84-3.326l-.479.044c-1.155.07-1.566.277-1.566 1.195v12.683c0 .919.41 1.126 1.566 1.195l.48.02v.666H63.6v-.666l.48-.02c1.154-.069 1.566-.276 1.566-1.195V8.923c0-.918-.412-1.126-1.567-1.195l-.48-.044V7.13h7.847v.553zm32.681 15.812l-.274-.573c-.112-.252-.161-.365-.43-.365-.431 0-2.32 1.145-5.688 1.145-2.203 0-4.293-.805-5.751-2.202-1.684-1.604-2.614-3.806-2.614-6.285 0-2.478.93-4.7 2.614-6.304C93.44 7.509 95.53 6.71 97.734 6.71c1.547 0 2.937.296 4.346.869.52.207.867.439 1.185.439.245 0 .475-.301.7-.874h.386v5.298h-.523c-1.68-3.303-3.794-5.002-5.84-5.002-2.687 0-4.434 2.78-4.434 7.776 0 5.16 1.522 7.752 4.435 7.752 2.227 0 4.204-1.65 6.162-4.977h.5v5.505h-.525zm2.144-.674l.48-.025c1.154-.069 1.566-.276 1.566-1.19V8.924c0-.918-.412-1.126-1.567-1.195l-.48-.044v-.553h7.935v.553l-.568.044c-1.184.045-1.566.277-1.566 1.195v5.322h6.617V8.924c0-.918-.386-1.15-1.57-1.195l-.544-.044v-.553h7.91v.553l-.475.044c-1.16.07-1.572.277-1.572 1.195v12.683c0 .914.412 1.121 1.572 1.19l.474.025v.666h-8.027v-.666l.661-.025c1.185-.044 1.571-.296 1.571-1.19V15.09h-6.617v6.517c0 .894.382 1.146 1.566 1.19l.66.025v.666h-8.026v-.666zM126.062 7.73l-.5-.044v-.553h7.935v.553l-.568.044c-1.184.045-1.571.277-1.571 1.19v9.38c0 2.617 1.958 4.43 4.733 4.43a5 5 0 0 0 3.886-1.907c.612-.8.769-1.762.769-3.115v-6.65c0-2.202-.744-3.234-2.565-3.303v-.622h5.315v.622c-1.38.182-1.997 1.234-1.997 3.253v6.285c0 1.467-.024 2.617-.636 3.624-1.135 1.837-3.318 2.888-6.275 2.888-4.341 0-6.96-2.083-6.96-5.593V8.92c0-.913-.406-1.12-1.566-1.19M33.259 4.434c0-2.118 1.498-3.63 4.028-3.63 3.764 0 5.78 3.26 6.916 7.09l.06.208h.513c-.015-.583-.147-2.844-.558-7.332-.015-.128-.039-.197-.063-.276h-.607c-.157.316-.142.849-.828.849C41.418 1.343 40.283 0 37.322 0c-3.799 0-7 2.957-7 6.448 0 8.265 12.364 5.51 12.364 12.298 0 2.286-1.503 4.3-4.83 4.3-4.396 0-6.163-4.235-6.73-8.363-.02-.148-.045-.197-.06-.311h-.744v8.576h.93c.147-.198.363-.37.872-.37.87 0 3.098 1.278 5.53 1.278 5.429 0 7.96-3.599 7.96-7.159 0-8.166-12.355-6.082-12.355-12.263m53.06 2.698H73.178l-.91 3.97h.5c1.796-2.271 3.548-3.392 5.046-3.392.636 0 .773.158.773.617v13.28c0 .964-.406 1.146-1.566 1.19l-.705.025v.662h8.297v-.662l-.7-.024c-1.185-.045-1.571-.277-1.571-1.19V8.327c0-.46.137-.617.773-.617 1.498 0 3.25 1.12 5.046 3.392h.48l-.91-3.97h-1.41zm-25.867 0H47.309l-.91 3.97h.5c1.796-2.271 3.548-3.392 5.046-3.392.636 0 .773.158.773.617v13.28c0 .964-.406 1.146-1.566 1.19l-.705.025v.662h8.296v-.662l-.7-.024c-1.184-.045-1.57-.277-1.57-1.19V8.327c0-.46.136-.617.773-.617 1.497 0 3.25 1.12 5.046 3.392h.48l-.91-3.97h-1.41z" fill="#000B42" fill-rule="evenodd"></path></svg>
+    </div>
+    <div class="root" id="app">
+
+      <!-- Images: -->
+
+      <div :title="photo.title" class="photos" v-for="photo of photos">
+
+        <img :title="photo.title" :src="photo.url" />
+<!-- 
+      <img @mouseover="isHovering = true" @mouseout="isHovering = false" :class="{hovering: isHovering}" :title="photo.title" :src="photo.url" /> -->
+
+      </div>
+    </div>
+    <nav class="footer">
+      <div class="footer-svg">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7zm11.77 8.27L13 19.54l-4.27-4.27A2.5 2.5 0 0 1 10.5 11c.69 0 1.32.28 1.77.74l.73.72.73-.73a2.5 2.5 0 0 1 3.54 3.54z"></path></svg>
+
+        <a href="https://www.institchu.com/shop/bundles/suit">SHOP</a>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path></svg>
+
+        <a class="fix-design" href="https://www.institchu.com/design">DESIGN</a>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+
+        <a class="fix-bag" href="https://www.institchu.com/design">YOUR BAG</a>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"></path></svg>
+
+        <a href="https://book.institchu.com/v2/#book/provider/any/">BOOK</a>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"></path></svg>
+
+        <a class="fix-account" href="https://www.institchu.com/login">ACCOUNT</a>
+      </div>
+
+    </nav>
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+
+      // console.clear()
+
+      var app = new Vue({
+        el: '#app',
+        created() {
+            this.fetchData();
+        },
+        data: {
+            photos: [],
+            title: null,
+            isHovering: false
+        },
+        methods: {
+            fetchData() {
+            axios.get('https://jsonplaceholder.typicode.com/albums/1/photos').then(response => {
+                this.photos = response.data;
+                console.log(this.photos.url);
+                });
+            },
+        }
+      });
+
+    </script>
+
+
+</body>
+
+</html>
